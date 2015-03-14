@@ -67,6 +67,8 @@ function init() {
 
 	// prepare server
 	server = new HttpServer();
+	server.get("/sd/", sdRoot);
+	server.get("/", appRoot);
 	server.get("/api/illuminance", function xhrres(req, res, oncomplete){
 		console.log(req);
 		var time = new Date();
