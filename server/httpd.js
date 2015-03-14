@@ -2188,7 +2188,7 @@ ServerHandler.prototype =
 
     var readFile =  function(fpath, successCb, errorCb)
     {
-      var xhr = new XMLHttpRequest();
+      var xhr = new XMLHttpRequest({ mozSystem: true });
       xhr.open('GET', fpath, true);
       xhr.responseType = 'blob';
 
