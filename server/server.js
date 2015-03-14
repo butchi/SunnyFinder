@@ -60,7 +60,12 @@ function init() {
   // prepare server
   server = new HttpServer();
   server.get("/sd/", sdRoot);
-  server.get("/", appRoot);
+  server.get("/", function(req, res, oncomplete) {
+    console.log('19:19');
+    console.log(req.bodyBuffer);
+    res.write('19:19');
+    oncomplete();
+  });
   server.get("/api/plant", function xhrres(req, res, oncomplete) {
     // console.log(req);
     var time_stamp = (new Date()).valueOf();
