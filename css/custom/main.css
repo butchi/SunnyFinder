@@ -1,0 +1,32 @@
+.car{
+  text-align:center;
+  margin-left:auto;margin-right:auto;  
+}
+
+ul,li	{ margin:0; padding:0; }
+#globalNavi	{ background: url(image/navi.jpg) repeat-x; height: 28px; padding-top: 7px; text-align: center; }
+
+#nav { width: 900px; margin: 0 auto; position: relative; line-height:1; text-align: left; }
+#nav li { list-style: none; float: left; position: relative; }
+
+#nav ul { display: none; position: absolute; top: 29px; left: 0; }
+* html #nav ul { line-height: 0; }
+#nav ul li { float: none; }
+
+#nav ul { width: 120px; }
+#nav ul ul { top: 0; left: 121px; }
+#nav ul a { 
+	display: block;
+	width: 108px;
+	background:#121212;
+	padding: 6px;
+	color: #FFF;
+	border-bottom: 1px solid #FFF;
+	opacity: 0.7;
+	filter: alpha(opacity=70);
+	zoom: 1;
+	line-height: 1;
+}
+#nav ul a.hover { background: #444; }
+
+
