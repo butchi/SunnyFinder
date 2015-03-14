@@ -9,8 +9,8 @@ window.licker = window.licker || {};
   function init() {
     ns.page.top.init();
     
-    $.getJSON('/api/rotation', function(data) {
-      console.log(data);
-    });
+//     $.getJSON('/api/plant', function(data) {
+//       console.log(data);
+//     });
   }
 }(window.licker));
