@@ -24,38 +24,10 @@ function init() {
     window.close();
   });
 
-  var inputIlluminance = document.getElementById('inputIlluminance');
-  var dispElmIlluminance = document.getElementById('dispElmIlluminance')
   var valIlluminance;
-  inputIlluminance.addEventListener('change', function (evt) {
-    valIlluminance = this.value;
-    dispElmIlluminance.innerHTML = valIlluminance;
-  });
-
-  var inputWater = document.getElementById('inputWater');
-  var dispElmWater = document.getElementById('dispElmWater')
   var valWater;
-  inputWater.addEventListener('change', function (evt) {
-    valWater = this.value;
-    dispElmWater.innerHTML = valWater;
-  });
-
-  var inputState = document.getElementById('inputState');
-  var dispElmState = document.getElementById('dispElmState')
   var valState;
-  inputState.addEventListener('change', function (evt) {
-    valState = this.value;
-    dispElmState.innerHTML = valState;
-  });
-
-  var inputBumper = document.getElementById('inputBumper');
-  var dispElmBumper = document.getElementById('dispElmBumper')
   var valBumper;
-  inputBumper.addEventListener('change', function (evt) {
-    console.log(this.value);
-    valBumper = this.value === 'on' ? 1 : 0;
-    dispElmBumper.innerHTML = valBumper;
-  });
 
   // prepare server
   server = new HttpServer();
@@ -85,7 +57,8 @@ function init() {
     res.write('10:22');
     oncomplete();
   });
-  server.get("/config/", appRoot);
+  server.get("/sunny-finder/", appRoot);
+  server.get("/config/", appRoot + '/config');
   server.get("/api/plant", function xhrres(req, res, oncomplete) {
     console.log(req);
     
