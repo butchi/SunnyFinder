@@ -22,6 +22,5 @@
     "geolocation":{ 
       "description": "現在位置を取得します" 
     }
-  },
-  "orientation": [ "landscape-primary" ]
+  }
 }

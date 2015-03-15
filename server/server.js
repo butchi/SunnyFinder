@@ -18,11 +18,6 @@ var sdRoot = '/sdcard/testserver'; // ref. install.sh setting
 
 function init() {
   //
-  var close_btn = document.getElementById('close');
-  close_btn.innerHTML = 'Close';
-  close_btn.addEventListener('click', function () {
-    window.close();
-  });
 
   var valIlluminance;
   var valWater;
@@ -49,16 +44,10 @@ function init() {
       var json = JSON.parse(binaryString);
 
       console.log(json);
-      switch(json.state){
-        case:"G"
-          $("#face").attr("src","./img/plant-anim.gif");
-        case:"S"
-          $("#face").attr("src","./img/plant-anim2.gif");
-        case:"R"
-          $("#face").attr("src","./img/plant-anim3.gif");
-        case:"L"
-          $("#face").attr("src","./img/plant-anim4.gif");
-      }
+      if(json.state==='G'){$("#face").attr("src","./img/plant-anim.gif");}
+      if(json.state==='S'){$("#face").attr("src","./img/plant-anim2.gif");}
+      if(json.state==='R'){$("#face").attr("src","./img/plant-anim3.gif");}
+      if(json.state==='L'){$("#face").attr("src","./img/plant-anim4.gif");}
       
     } else {
       console.log('no body');
@@ -90,6 +79,21 @@ function init() {
     oncomplete();
   });
   server.start(port);
+  console.log("server start");
+  
+  face();  
 }
 
 addEventListener('load', init);
+
+function face(){
+  console.log("face");
+  var i=Math.random()*4;
+      if(i<3){$("#face").attr("src","./img/plant-anim.gif");}
+      if(i<2){$("#face").attr("src","./img/plant-anim2.gif");}
+      if(i<1){$("#face").attr("src","./img/plant-anim3.gif");}
+      if(i<0){$("#face").attr("src","./img/plant-anim4.gif");}
+
+  
+  setTimeout(face,1000);
+}
