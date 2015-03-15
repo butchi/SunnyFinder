@@ -9,8 +9,14 @@ window.licker = window.licker || {};
   function init() {
     ns.page.top.init();
     
-//     $.getJSON('/api/plant', function(data) {
-//       console.log(data);
-//     });
-  }
-}(window.licker));
+    var xhr = new XMLHttpRequest();
+    var url = '/api/plant';
+    xhr.open('GET',url,true);
+    xhr.onload = function(e){
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        console.log(xhr.responseText);
+      }
+    }
+    console.log('req2');
+    xhr.send(null);
+}}(window.licker));

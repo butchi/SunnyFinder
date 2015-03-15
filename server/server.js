@@ -87,12 +87,13 @@ function init() {
   });
   server.get("/config/", appRoot);
   server.get("/api/plant", function xhrres(req, res, oncomplete) {
-    // console.log(req);
+    console.log(req);
+    
     var time_stamp = (new Date()).valueOf();
-    var illuminance = parseInt(illuminanceVal);
-    var water = parseInt(waterVal);
-    var state = stateVal;
-    var bumper = parseInt(bumperVal);
+    var illuminance = parseInt(valIlluminance);
+    var water = parseInt(valWater);
+    var state = valState;
+    var bumper = parseInt(valBumper);
 
     var ret = {
        time_stamp: time_stamp,
@@ -102,7 +103,8 @@ function init() {
        bumper: bumper
      };
 
-     res.write(JSON.stringify(ret));
+//      res.write(JSON.stringify(ret));
+    res.write('12:07');
      oncomplete();
    });
   server.start(port);
