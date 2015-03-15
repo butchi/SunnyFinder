@@ -62,8 +62,3 @@ a img {
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
-
-/* line 1, ../../../_devel/sass/page/_top.scss */
-.page-top {
-  background: #f00;
-}
