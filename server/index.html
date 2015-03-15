@@ -1,18 +1,29 @@
-<html>
+<!DOCTYPE html>
+<html lang="ja">
 <head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, user-scalable=no" />
-	<link rel=stylesheet href=style.css></link>
-	<script src="httpd.js"></script>
-	<script src="server.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1280,user-scalable=no">
+  <title>サニーファインダー</title>
+
+  <link href="./css/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+  <script src="httpd.js"></script>
+  <script src="server.js"></script>
 </head>
-
 <body>
-	<div id=controlpan>
-		<button id=close>this message should be replaced in init()</button>
-	</div>
+<div id="wrapper">
 
-	<div id=message></div>
+  <div class="page page-top">
+    <button id=close>this message should be replaced in init()</button>
+    <p><img src="./img/plant-anim.gif" alt=""></p>
+  </div>
+
+</div>
+
+<script src="./js/lib/jquery.js"></script>
+<script src="./js/util.js"></script>
+<script src="./js/page-manager.js"></script>
+<script src="./js/page/top.js"></script>
+<script src="./js/main.js"></script>
+
 </body>
 </html>
-
