@@ -33,28 +33,27 @@ function init() {
   server = new HttpServer();
   server.get("/sd/", sdRoot);
   server.get("/", function(req, res, oncomplete) {
-    console.log('10:22');
+    console.log('12:54');
     console.log('req:', req);
-    var buffer = req.bodyBuffer;
-    console.log('body buffer:', buffer);
+    var bodyBuffer = req.bodyBuffer || null;
+    console.log('body buffer:', bodyBuffer);
 
-    if(buffer) {
-      var
-        binaryString = '',
-        bytes = new Uint8Array(buffer),
-        length = bytes.length;
+    if(bodyBuffer) {
+      var binaryString = '';
+      var bytes = new Uint8Array(bodyBuffer);
+      var length = bytes.length;
       for (var i = 0; i < length; i++) {
         binaryString += String.fromCharCode(bytes[i]);
       }
 
-      var json = JSON.parse(bynaryString);
+      var json = JSON.parse(binaryString);
 
-      console.log(bynaryString);
+      console.log(json);
     } else {
       console.log('no body');
     }
     
-    res.write('10:22');
+    res.write('12:52');
     oncomplete();
   });
   server.get("/sunny-finder/", appRoot);

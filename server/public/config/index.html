@@ -35,15 +35,35 @@
       valIlluminance = this.value;
       dispElmIlluminance.innerHTML = valIlluminance;
 
-      var xhr = new XMLHttpRequest();
-      var url = '/api/plant';
-      xhr.open('GET',url,true);
-      xhr.onload = function(e){
-        if (xhr.readyState === 4 && xhr.status === 200) {
-          console.log(xhr.responseText);
-        }
+
+      function str2bytes(str, callback) {
+        var fr = new FileReader();
+        fr.onloadend = function() {
+          callback(fr.result);
+        };
+        fr.readAsArrayBuffer(new Blob([str]));
       }
-      xhr.send(null);
+
+      str2bytes('{"a":5,"b":3,"c":8}', function(arrayBuffer) {
+        var
+          binaryString = '',
+          bytes = new Uint8Array(arrayBuffer),
+          length = bytes.length;
+        for (var i = 0; i < length; i++) {
+          binaryString += String.fromCharCode(bytes[i]);
+        }
+        
+        bodyBuffer = binaryString;
+        var xhr = new XMLHttpRequest();
+        var url = '/';
+        xhr.open('POST',url,true);
+        xhr.onload = function(e){
+          if (xhr.readyState === 4 && xhr.status === 200) {
+            console.log(xhr.responseText);
+          }
+        }
+        xhr.send(bodyBuffer);
+      })
     });
 
     var inputWater = document.getElementById('inputWater');
