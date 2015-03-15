@@ -101,12 +101,11 @@ function init() {
        water: water,
        state: state,
        bumper: bumper
-     };
+    };
 
-//      res.write(JSON.stringify(ret));
-    res.write('12:07');
-     oncomplete();
-   });
+    res.write(JSON.stringify(ret));
+    oncomplete();
+  });
   server.start(port);
 }
 

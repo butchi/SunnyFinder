@@ -17,6 +17,5 @@ window.licker = window.licker || {};
         console.log(xhr.responseText);
       }
     }
-    console.log('req2');
     xhr.send(null);
 }}(window.licker));
