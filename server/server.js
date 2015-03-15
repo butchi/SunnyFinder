@@ -49,6 +49,17 @@ function init() {
       var json = JSON.parse(binaryString);
 
       console.log(json);
+      switch(json.state){
+        case:"G"
+          $("#face").attr("src","./img/plant-anim.gif");
+        case:"S"
+          $("#face").attr("src","./img/plant-anim2.gif");
+        case:"R"
+          $("#face").attr("src","./img/plant-anim3.gif");
+        case:"L"
+          $("#face").attr("src","./img/plant-anim4.gif");
+      }
+      
     } else {
       console.log('no body');
     }
