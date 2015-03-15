@@ -61,11 +61,31 @@ function init() {
   server = new HttpServer();
   server.get("/sd/", sdRoot);
   server.get("/", function(req, res, oncomplete) {
-    console.log('19:19');
-    console.log(req.bodyBuffer);
-    res.write('19:19');
+    console.log('10:22');
+    console.log('req:', req);
+    var buffer = req.bodyBuffer;
+    console.log('body buffer:', buffer);
+
+    if(buffer) {
+      var
+        binaryString = '',
+        bytes = new Uint8Array(buffer),
+        length = bytes.length;
+      for (var i = 0; i < length; i++) {
+        binaryString += String.fromCharCode(bytes[i]);
+      }
+
+      var json = JSON.parse(bynaryString);
+
+      console.log(bynaryString);
+    } else {
+      console.log('no body');
+    }
+    
+    res.write('10:22');
     oncomplete();
   });
+  server.get("/config/", appRoot);
   server.get("/api/plant", function xhrres(req, res, oncomplete) {
     // console.log(req);
     var time_stamp = (new Date()).valueOf();
