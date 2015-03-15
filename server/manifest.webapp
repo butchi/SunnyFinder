@@ -1,23 +1,27 @@
 {
-  "name": "Test HTTP Server",
-  "description": "Test HTTP Server",
-  "type": "privileged",
+  "name": "Sunny finder",
+  "description": "サニー⭐️ファインダー",
+  "type":"privileged",
   "launch_path": "/index.html",
-  "developer": {
-    "name": "KDDI R&D",
-    "url": "http://www.kddilabs.jp"
+  "icons": {
+    "128": "/img/icon-128.png"
   },
+  "developer": {
+    "name": "WOT Hackathon team 8",
+    "url": "http://fabble.cc/noifuji/xxxxxx"
+  },
+  "default_locale": "ja",
   "permissions": {
-    "systemXHR": {
+    "systemXHR":{
       "description": "xhr!"
     },
-    "tcp-socket": {},
-    "device-storage:sdcard": {
-      "access": "readwrite"
+    "tcp-socket":{},
+    "camera":{ 
+      "description": "カメラで撮影します" 
+    },
+    "geolocation":{ 
+      "description": "現在位置を取得します" 
     }
   },
-  "icons": {
-    "128": "/icon.png"
-  },
-  "orientation": "default"
+  "orientation": [ "landscape-primary" ]
 }
